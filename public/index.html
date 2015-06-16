@@ -3,9 +3,59 @@
 <head>
   <title>Cold Remedies List</title>
   <link rel="stylesheet" href="index.css" />
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<div class="container">
+		<div class="info">
+		<h1>Oh no! Kyle is sick!</h1>
+		<p>This is Kyle. He teaches front end engineering at the Iron Yard, an intensive coding program. Unfortunately, Kyle has gotten pretty sick. Your mission, should you choose to accept it, is to go the the grab-bag pharmacy, where the online ordering system is pretty buggy. They know you want to pick up a cold remedy, but they've got 10 types and you'll end up with a random one on each order delivery. Try to help him get better in 5 turns or less. His class needs him!</p>
+		</div>
 
+		<div class="kyle">
+			<div class="avatar">
+				<img src="http://theironyard.com/images/about/kyle-hill.jpg"/>
+			</div>
+			
+			<div id="sickness">
+				Sickness: <span id="current-sickness">10</span>
+			</div>
+			<div id="immunity">
+				Immunity: <span id="current-immunity">0</span>
+			</div>
+			<br>
+			<div id="turns">
+				Turns: <span id="turns-left">5</span>
+			</div>
+			<div id="order">Place an order</div>
+		</div>
+
+			<div id="controls">
+
+		<div id="result">You got: <h1 id="memory"></h1></div>
+	</div>
+		<div id="pharmacy"></div>
+
+
+		<template id="phamacyTemplate">
+			<div class="item">
+				<div class="stats">
+					<h2 class="name">{{ name }}</h2>
+					<ul>
+					<li class="prevention">Prevention: {{ prevention }}</li>
+					<li class="treatment">Treatment: {{ treatment }}</li>
+					</ul>
+				</div>
+				<div class="item-details hidden">
+					<p class="description">{{ description }}</p><br>
+					<p class="reactions">{{ reactions }}</p>
+				</div>
+			</div>
+		</template>
+	</div>
+
+  
   <script src="libs/jquery.js"></script>
   <script src="libs/handlebars.js"></script>
   <script src="libs/underscore.js"></script>
