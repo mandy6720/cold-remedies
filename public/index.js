@@ -41,7 +41,12 @@ $(document).on("ready", function() {
 		//Subtract sickness
 		kyle.sickness -= pharmacyArray[currentRoll].treatment;
 		// Update health
-		$("#current-sickness").text(kyle.sickness);
+		if (kyle.sickness < 0) {
+			$("#current-sickness").text("0");
+		} else {
+			$("#current-sickness").text(kyle.sickness);
+		}
+		
 
 		//Subtract sickness
 		kyle.immunity += pharmacyArray[currentRoll].prevention;
